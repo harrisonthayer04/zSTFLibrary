@@ -1,0 +1,25 @@
+# Configuration for Model 5: TransformerForecaster
+model:
+  name: 'model_5'
+  params:
+    input_dim: 6
+    output_dim: 6
+    past_len: 96
+    future_len: 96
+    d_model: 128
+    nhead: 8
+    num_encoder_layers: 4
+    ff_dim: 256 # Typically 2-4x d_model
+    dropout: 0.1
+
+data:
+  # Note: Model 5 uses SlidingWindowDataset, which is not fully implemented
+  # in the current run_experiment.py. This config is a placeholder.
+  path: '../data/District_12_January_2023_Data_Multivaraite'
+  past_len: 96
+  future_len: 96
+
+training:
+  epochs: 50
+  batch_size: 32
+  learning_rate: 0.0001 

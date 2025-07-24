@@ -1,0 +1,23 @@
+# Hyperparameter search configuration for Model 1: LSTMAttention
+model:
+  name: 'model_1'
+  params:
+    # Fixed parameters
+    input_dim: 6
+    output_dim: 6
+    past_len: 96
+
+data:
+  path: '../data/District_12_January_2023_Data_Multivaraite'
+  past_len: 96
+  future_len: 96
+
+training:
+  epochs: 1000
+  batch_size: 32
+
+hyper_search:
+  params:
+    hidden_dim: [32, 64, 128, 256]
+    num_layers: [1, 2, 3]
+    learning_rate: [0.0001, 0.0005, 0.001, 0.005] 

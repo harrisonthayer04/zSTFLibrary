@@ -1,0 +1,23 @@
+# Configuration for Model 4: SiameseMultiResLSTM
+model:
+  name: 'model_4'
+  params:
+    input_dim: 6
+    output_dim: 6
+    future_len: 96
+    d_model: 32
+    nhead: 4
+    num_encoder_layers: 1
+    ff_dim: 128
+    lstm_hidden_dim: 256
+    num_lstm_layers: 3
+
+data:
+  path: '../data/District_12_January_2023_Data_Multivaraite'
+  past_len: 96
+  future_len: 96
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.0005 

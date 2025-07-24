@@ -1,0 +1,19 @@
+# Configuration for Model 1: LSTMAttention
+model:
+  name: 'model_1'
+  params:
+    input_dim: 6
+    output_dim: 6
+    past_len: 96
+    hidden_dim: 128
+    num_layers: 2
+
+data:
+  path: '../data/District_12_January_2023_Data_Multivaraite'
+  past_len: 96
+  future_len: 96
+
+training:
+  epochs: 50 # Lowered for a quick test run
+  batch_size: 32
+  learning_rate: 0.0005 

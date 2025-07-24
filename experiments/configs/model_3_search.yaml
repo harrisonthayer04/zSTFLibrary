@@ -1,0 +1,27 @@
+# Hyperparameter search configuration for Model 3: SiameseLSTM
+model:
+  name: 'model_3'
+  params:
+    # Fixed parameters
+    input_dim: 6
+    output_dim: 6
+    future_len: 96
+
+data:
+  path: '../data/District_12_January_2023_Data_Multivaraite'
+  past_len: 96
+  future_len: 96
+
+training:
+  epochs: 1000
+  batch_size: 32
+
+hyper_search:
+  params:
+    d_model: [32, 64, 128, 256]
+    nhead: [2, 4, 8]
+    num_encoder_layers: [1, 2, 3, 4]
+    ff_dim: [128, 256, 512]
+    lstm_hidden_dim: [32, 64, 128, 256]
+    num_lstm_layers: [1, 2, 3]
+    learning_rate: [0.0001, 0.0005, 0.001] 

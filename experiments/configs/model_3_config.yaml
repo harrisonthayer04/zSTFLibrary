@@ -1,0 +1,23 @@
+# Configuration for Model 3: SiameseLSTM
+model:
+  name: 'model_3'
+  params:
+    input_dim: 6
+    output_dim: 6
+    future_len: 96
+    d_model: 64
+    nhead: 4
+    num_encoder_layers: 2
+    ff_dim: 128
+    lstm_hidden_dim: 256
+    num_lstm_layers: 2
+
+data:
+  path: '../data/District_12_January_2023_Data_Multivaraite'
+  past_len: 96
+  future_len: 96
+
+training:
+  epochs: 50
+  batch_size: 16
+  learning_rate: 0.0005 
